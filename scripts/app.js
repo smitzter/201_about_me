@@ -25,10 +25,10 @@ console.log('Correct answer = yes');
 
 if (userAnswer1 === 'yes' || userAnswer1 === 'y') {
   points++;
-  alert('You got it right! My favorite color IS pink! You\'re total score is: ' + points);
+  alert('You got it right! My favorite color IS pink! Your total score is: ' + points);
   console.log('The user got question 1 correct');
 } else {
-  alert('Wrong! It\'s pink! You\'re total score is still: ' + points);
+  alert('Wrong! It\'s pink! Your total score is still: ' + points);
   console.log('The user got question 1 incorrect');
 }
 
@@ -42,10 +42,10 @@ console.log('Correct answer = yes');
 
 if (userAnswer2 === 'yes' || userAnswer2 === 'y') {
   points++;
-  alert('You got it right! Elepahnts ARE my favorite animal! You\'re total score is: ' + points);
+  alert('You got it right! Elephants ARE my favorite animal! Your total score is: ' + points);
   console.log('The user got question 2 correct');
 } else {
-  alert('Wrong! Elephants are the best. You\'re total score is still: ' + points);
+  alert('Wrong! Elephants are the best. Your total score is still: ' + points);
   console.log('The user got question 2 incorrect');
 }
 
@@ -59,10 +59,10 @@ console.log('Correct answer = no');
 
 if (userAnswer3 === 'no' || userAnswer3 === 'n') {
   points++;
-  alert('You got it RIGHT! Coffee is disgusting. You\'re total score is: ' + points);
+  alert('You got it RIGHT! Coffee is disgusting. Your total score is: ' + points);
   console.log('The user got question 3 correct');
 } else {
-  alert('Wrong! I hate coffee. You\'re total score is still: ' + points);
+  alert('Wrong! I hate coffee. Your total score is still: ' + points);
   console.log('The user got question 3 incorrect');
 }
 
@@ -76,10 +76,10 @@ console.log('Correct answer = yes');
 
 if (userAnswer4 === 'yes' || userAnswer4 === 'y') {
   points++;
-  alert('That\'s right! I love Disney so much that I even got engaged there! You\'re total score is: ' + points);
+  alert('That\'s right! I love Disney so much that I even got engaged there! Your total score is: ' + points);
   console.log('The user got question 4 correct');
 } else {
-  alert('Wrong! It may be hard to believe, but I try to go to Disney at LEAST once a year. You\'re total score is still: ' + points);
+  alert('Wrong! It may be hard to believe, but I try to go to Disney at LEAST once a year. Your total score is still: ' + points);
   console.log('The user got question 4 incorrect');
 }
 
@@ -93,10 +93,10 @@ console.log('Correct answer = no');
 
 if (userAnswer5 === 'no' || userAnswer5 === 'n') {
   points++;
-  alert('You got it right! We adopted her from Taiwan, where she was a street dog for 5 months before being rescued and finding us. You\'re total score is: ' + points);
+  alert('You got it right! We adopted her from Taiwan, where she was a street dog for 5 months before being rescued and finding us. Your total score is: ' + points);
   console.log('The user got question 5 correct');
 } else {
-  alert('We actually adopted her from Taiwan, where she was a street dog for 5 months before being rescued and finding us. You\'re total score is still: ' + points);
+  alert('We actually adopted her from Taiwan, where she was a street dog for 5 months before being rescued and finding us. Your total score is still: ' + points);
   console.log('The user got question 5 incorrect');
 }
 
