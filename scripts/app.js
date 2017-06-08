@@ -31,9 +31,13 @@ console.log('userName = ' + userName);
 // ******** START QUIZ  ******** //
 
 // Question 1 - Is pink my favorite color?
-
+function askQuestion(questionIndex) {
+  userAnswer = prompt(guessingGameInfo[questionIndex] [0]).toLowerCase();
+  console.log('Question 1: userAnswer = ' + userAnswer);
+  console.log('Correct answer = ' + guessingGameInfo[questionIndex][1]);
+}
 // ask user first question and save answer.
-userAnswer = prompt('Nice to meet you ' + userName + '. Let\'s play a game! Guess the following questions...' + guessingGameInfo[0][0]).toLowerCase();
+askQuestion(0);
 
 console.log('Question 1: userAnswer = ' + userAnswer);
 console.log('Correct answer = ' + guessingGameInfo[0][1]);
