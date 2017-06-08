@@ -27,7 +27,7 @@ while (!userName) {
   userName = prompt('Sorry... I didn\'t catch that. What is your name?');
 }
 console.log('userName = ' + userName);
-
+alert('Nice to meet you ' + userName + '! Let\'s play a game.');
 // ******** START QUIZ  ******** //
 
 // Question 1 - Is pink my favorite color?
@@ -57,10 +57,7 @@ if (userAnswer === guessingGameInfo[0][1] || userAnswer === guessingGameInfo[0][
 console.log('Total Score: ' + points);
 
 // Question 2 - Are elephants my favorite animal?
-userAnswer = prompt(guessingGameInfo[1][0]).toLowerCase();
-
-console.log('Question 2: userAnswer = ' + userAnswer);
-console.log('Correct answer = ' + guessingGameInfo[1][1]);
+askQuestion(1);
 
 if (userAnswer === guessingGameInfo[1][1] || userAnswer === guessingGameInfo[1][1][0]) {
   points++;
@@ -74,10 +71,7 @@ if (userAnswer === guessingGameInfo[1][1] || userAnswer === guessingGameInfo[1][
 console.log('Total Score: ' + points);
 
 // Question 3 - Is coffee my favorite food?
-userAnswer = prompt(guessingGameInfo[2][0]).toLowerCase();
-
-console.log('Question 3: userAnswer = ' + userAnswer);
-console.log('Correct answer = ' + guessingGameInfo[2][1]);
+askQuestion(2);
 
 if (userAnswer === guessingGameInfo[2][1] || userAnswer === guessingGameInfo[2][1][0]) {
   points++;
@@ -91,10 +85,7 @@ if (userAnswer === guessingGameInfo[2][1] || userAnswer === guessingGameInfo[2][
 console.log('Total Score: ' + points);
 
 // Question 4 - Is it true that I've visited Disney theme parks more than 12 times?
-userAnswer = prompt(guessingGameInfo[3][0]).toLowerCase();
-
-console.log('Question 4: userAnswer = ' + userAnswer);
-console.log('Correct answer = ' + guessingGameInfo[3][1]);
+askQuestion(3);
 
 if (userAnswer === guessingGameInfo[3][1] || userAnswer === guessingGameInfo[3][1][0]) {
   points++;
@@ -108,10 +99,7 @@ if (userAnswer === guessingGameInfo[3][1] || userAnswer === guessingGameInfo[3][
 console.log('Total Score: ' + points);
 
 // Question 5 - I have an adorable dog named Winnie. Is it true that we adopted her from Japan?
-userAnswer = prompt(guessingGameInfo[4][0]).toLowerCase();
-
-console.log('Question 5: userAnswer = ' + userAnswer);
-console.log('Correct answer = ' + guessingGameInfo[4][1]);
+askQuestion(4);
 
 if (userAnswer === guessingGameInfo[4][1] || userAnswer === guessingGameInfo[4][1][0]) {
   points++;
@@ -127,10 +115,7 @@ console.log('Total Score: ' + points);
 // Question 6 - I'm thinking of a number... what is it?
 
 do {
-  userAnswer = prompt(guessingGameInfo[5][0]);
-
-  console.log('Question 6: userAnswer = ' + userAnswer);
-  console.log('Correct answer = ' + guessingGameInfo[5][1]);
+  askQuestion(5);
 
   // if the answer gets it right
   if (userAnswer === guessingGameInfo[5][1]) {
@@ -165,10 +150,7 @@ tryAgain = true; //reset tryAgain to be turned on
 guesses = 1; //reset guesses for question 7
 
 do {
-  userAnswer = prompt(guessingGameInfo[6][0]).toLowerCase();
-
-  console.log('Question 7: userAnswer = ' + userAnswer);
-  console.log('Correct answer = ' + guessingGameInfo[6][1]);
+  askQuestion(6);
 
 // for each item in the array:
   for (var i = 0; i < guessingGameInfo[6][1].length; i++) {
