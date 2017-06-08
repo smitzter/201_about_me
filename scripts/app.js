@@ -31,86 +31,24 @@ alert('Nice to meet you ' + userName + '! Let\'s play a game.');
 // ******** START QUIZ  ******** //
 
 // Question 1 - Is pink my favorite color?
-function askQuestion(questionIndex) {
-  userAnswer = prompt(guessingGameInfo[questionIndex] [0]).toLowerCase();
-  console.log('Question 1: userAnswer = ' + userAnswer);
-  console.log('Correct answer = ' + guessingGameInfo[questionIndex][1]);
-}
-// ask user first question and save answer.
 askQuestion(0);
-
-console.log('Question 1: userAnswer = ' + userAnswer);
-console.log('Correct answer = ' + guessingGameInfo[0][1]);
-
-//if the answer is correct:
-if (userAnswer === guessingGameInfo[0][1] || userAnswer === guessingGameInfo[0][1][0]) {
-  //add to points, and alert the user they got the answer right
-  points++;
-  alert('You got it right! My favorite color IS pink! Your total score is: ' + points);
-  console.log('The user got question 1 correct');
-} else {
-  //of not, tell the user the correct answer.
-  alert('Wrong! It IS pink! Your total score is: ' + points);
-  console.log('The user got question 1 incorrect');
-}
-
-console.log('Total Score: ' + points);
+yesNoLogic(0);
 
 // Question 2 - Are elephants my favorite animal?
 askQuestion(1);
-
-if (userAnswer === guessingGameInfo[1][1] || userAnswer === guessingGameInfo[1][1][0]) {
-  points++;
-  alert('You got it right! Elephants ARE my favorite animal! Your total score is: ' + points);
-  console.log('The user got question 2 correct');
-} else {
-  alert('Wrong! Elephants are the best. Your total score is still: ' + points);
-  console.log('The user got question 2 incorrect');
-}
-
-console.log('Total Score: ' + points);
+yesNoLogic(1);
 
 // Question 3 - Is coffee my favorite food?
 askQuestion(2);
-
-if (userAnswer === guessingGameInfo[2][1] || userAnswer === guessingGameInfo[2][1][0]) {
-  points++;
-  alert('You got it RIGHT! Coffee is disgusting. Your total score is: ' + points);
-  console.log('The user got question 3 correct');
-} else {
-  alert('Wrong! I hate coffee. Your total score is still: ' + points);
-  console.log('The user got question 3 incorrect');
-}
-
-console.log('Total Score: ' + points);
+yesNoLogic(2);
 
 // Question 4 - Is it true that I've visited Disney theme parks more than 12 times?
 askQuestion(3);
-
-if (userAnswer === guessingGameInfo[3][1] || userAnswer === guessingGameInfo[3][1][0]) {
-  points++;
-  alert('That\'s right! I love Disney so much that I even got engaged there! Your total score is: ' + points);
-  console.log('The user got question 4 correct');
-} else {
-  alert('Wrong! It may be hard to believe, but I try to go to Disney at LEAST once a year. Your total score is still: ' + points);
-  console.log('The user got question 4 incorrect');
-}
-
-console.log('Total Score: ' + points);
+yesNoLogic(3);
 
 // Question 5 - I have an adorable dog named Winnie. Is it true that we adopted her from Japan?
 askQuestion(4);
-
-if (userAnswer === guessingGameInfo[4][1] || userAnswer === guessingGameInfo[4][1][0]) {
-  points++;
-  alert('You got it right! We adopted her from Taiwan, where she was a street dog for 5 months before being rescued and finding us. Your total score is: ' + points);
-  console.log('The user got question 5 correct');
-} else {
-  alert('We actually adopted her from Taiwan, where she was a street dog for 5 months before being rescued and finding us. Your total score is still: ' + points);
-  console.log('The user got question 5 incorrect');
-}
-
-console.log('Total Score: ' + points);
+yesNoLogic(4);
 
 // Question 6 - I'm thinking of a number... what is it?
 
@@ -189,4 +127,22 @@ if (points === 1) {
 
 } else {
   console.log ('Error: score is being determined incorrectly.');
+}
+
+// ******** FUNCTIONS  ******** //
+function yesNoLogic(questionIndex) {
+  if (userAnswer === guessingGameInfo[questionIndex][1] || userAnswer === guessingGameInfo[questionIndex][1][0]) {
+    points++;
+    alert('Correct! Your total score is: ' + points);
+    console.log('The user got a question correct');
+  } else {
+    alert('Wrong! Your total score is still: ' + points);
+    console.log('The user got a question incorrect');
+  }
+  console.log('Total Score: ' + points);
+}
+function askQuestion(questionIndex) {
+  userAnswer = prompt(guessingGameInfo[questionIndex] [0]).toLowerCase();
+  console.log('Question 1: userAnswer = ' + userAnswer);
+  console.log('Correct answer = ' + guessingGameInfo[questionIndex][1]);
 }
