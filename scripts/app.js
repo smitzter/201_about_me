@@ -86,7 +86,7 @@ console.log('Total Score: ' + points);
 
 tryAgain = true; //reset tryAgain to be turned on
 guesses = 1; //reset guesses for question 7
-multipleAnswersQuestion();
+multipleAnswersQuestion(6);
 
 // ******** FINAL SCORE  ******** //
 
@@ -121,15 +121,15 @@ function askQuestion(questionIndex) {
   console.log('Correct answer = ' + guessingGameInfo[questionIndex][1]);
 }
 
-function multipleAnswersQuestion() {
+function multipleAnswersQuestion(questionIndex) {
   do {
     askQuestion(6);
 
   // for each item in the array:
 
-    for (var i = 0; i < guessingGameInfo[6][1].length; i++) {
+    for (var i = 0; i < guessingGameInfo[questionIndex][1].length; i++) {
       // if the answer is correct
-      if (userAnswer === guessingGameInfo[6][1][i]) {
+      if (userAnswer === guessingGameInfo[questionIndex][1][i]) {
         //turn off tryAgain, increment points, alert user
         tryAgain = false;
         points++;
