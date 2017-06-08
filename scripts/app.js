@@ -1,11 +1,11 @@
 'use strict';
 
 // ******** DECLARE VARIABLES  ******** //
-var userName;
-var points = 0;
-var userAnswer;
-var tryAgain;
-var guesses = 1;
+var userName; // to hold the user's name
+var points = 0; // points in the quiz game, starting at 0
+var userAnswer; // the user's answer to the current question
+var tryAgain; // for questions that get multiple attempts, does the user get more attempts?
+var guesses = 1; // for questions that get multiple attempts, the attempt count starts at 1
 
 // guessingGameInfo is an array that consists of an array for each question in the guessing game. Each nested array consists of a string with the question and a string/string array with the answer(s).
 var guessingGameInfo = [];
@@ -31,16 +31,21 @@ console.log('userName = ' + userName);
 // ******** START QUIZ  ******** //
 
 // Question 1 - Is pink my favorite color?
+
+// ask user first question and save answer.
 userAnswer = prompt('Nice to meet you ' + userName + '. Let\'s play a game! Guess the following questions...' + guessingGameInfo[0][0]).toLowerCase();
 
 console.log('Question 1: userAnswer = ' + userAnswer);
 console.log('Correct answer = ' + guessingGameInfo[0][1]);
 
+//if the answer is correct:
 if (userAnswer === guessingGameInfo[0][1] || userAnswer === guessingGameInfo[0][1][0]) {
+  //add to points, and alert the user they got the answer right
   points++;
   alert('You got it right! My favorite color IS pink! Your total score is: ' + points);
   console.log('The user got question 1 correct');
 } else {
+  //of not, tell the user the correct answer.
   alert('Wrong! It IS pink! Your total score is: ' + points);
   console.log('The user got question 1 incorrect');
 }
@@ -123,26 +128,30 @@ do {
   console.log('Question 6: userAnswer = ' + userAnswer);
   console.log('Correct answer = ' + guessingGameInfo[5][1]);
 
+  // if the answer gets it right
   if (userAnswer === guessingGameInfo[5][1]) {
     points++;
     alert('Correct! Wow, you read my mind! Your total score is: ' + points);
     tryAgain = false;
     console.log('The user got question 5 correct');
   } else if (guesses === 4) {
+    //else if the user is out of attempts
     alert('Nope! The answer was ' + guessingGameInfo[5][1] + '. You score is still: ' + points + '.');
     tryAgain = false;
   } else if (userAnswer < guessingGameInfo[5][1]){
+    // else if the user has extra attempts and guessed too low
     alert('Too low! Try again...');
     guesses++;
     tryAgain = true;
     console.log('User to retry question 6. They guesses too low.');
   } else {
+    // else if the user has extra attempts and guessed too high
     alert('Too high! Try again...');
     guesses++;
     tryAgain = true;
     console.log('User to retry question 6. They guesses too high.');
   }
-} while (tryAgain && guesses <= 4);
+} while (tryAgain && guesses <= 4); // keep running while tryAgain is true and they've had no more than 4 guesses.
 
 console.log('Total Score: ' + points);
 
@@ -157,24 +166,29 @@ do {
   console.log('Question 7: userAnswer = ' + userAnswer);
   console.log('Correct answer = ' + guessingGameInfo[6][1]);
 
+// for each item in the array:
   for (var i = 0; i < guessingGameInfo[6][1].length; i++) {
+    // if the answer is correct
     if (userAnswer === guessingGameInfo[6][1][i]) {
+      //turn off tryAgain, increment points, alert user
       tryAgain = false;
       points++;
       alert('Yes! I\'ve visited Canada, Mexico, England, France, Italy, and Austria. Your total score is: ' + points);
       console.log('The user got question 6 correct');
     }
   }
+  // if the user has not gotten the right answer and the user is out of attempts
   if (guesses === 6) {
     alert('Nope! I\'ve visited Canada, Mexico, England, France, Italy, and Austria. You score is still: ' + points + '.');
     tryAgain = false;
+    // if the user has not gotten the right answer and has additional attempts.
   } else if (tryAgain) {
     alert('WRONG! Try again...');
     guesses++;
     console.log('User to retry question 7');
   }
 
-} while (tryAgain && guesses <= 6);
+} while (tryAgain && guesses <= 6); // while the user has attempts left
 
 // ******** FINAL SCORE  ******** //
 
