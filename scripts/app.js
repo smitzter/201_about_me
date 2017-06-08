@@ -86,33 +86,7 @@ console.log('Total Score: ' + points);
 
 tryAgain = true; //reset tryAgain to be turned on
 guesses = 1; //reset guesses for question 7
-
-do {
-  askQuestion(6);
-
-// for each item in the array:
-  for (var i = 0; i < guessingGameInfo[6][1].length; i++) {
-    // if the answer is correct
-    if (userAnswer === guessingGameInfo[6][1][i]) {
-      //turn off tryAgain, increment points, alert user
-      tryAgain = false;
-      points++;
-      alert('Yes! I\'ve visited Canada, Mexico, England, France, Italy, and Austria. Your total score is: ' + points);
-      console.log('The user got question 6 correct');
-    }
-  }
-  // if the user has not gotten the right answer and the user is out of attempts
-  if (guesses === 6) {
-    alert('Nope! I\'ve visited Canada, Mexico, England, France, Italy, and Austria. You score is still: ' + points + '.');
-    tryAgain = false;
-    // if the user has not gotten the right answer and has additional attempts.
-  } else if (tryAgain) {
-    alert('WRONG! Try again...');
-    guesses++;
-    console.log('User to retry question 7');
-  }
-
-} while (tryAgain && guesses <= 6); // while the user has attempts left
+multipleAnswersQuestion();
 
 // ******** FINAL SCORE  ******** //
 
@@ -145,4 +119,34 @@ function askQuestion(questionIndex) {
   userAnswer = prompt(guessingGameInfo[questionIndex] [0]).toLowerCase();
   console.log('Question 1: userAnswer = ' + userAnswer);
   console.log('Correct answer = ' + guessingGameInfo[questionIndex][1]);
+}
+
+function multipleAnswersQuestion() {
+  do {
+    askQuestion(6);
+
+  // for each item in the array:
+
+    for (var i = 0; i < guessingGameInfo[6][1].length; i++) {
+      // if the answer is correct
+      if (userAnswer === guessingGameInfo[6][1][i]) {
+        //turn off tryAgain, increment points, alert user
+        tryAgain = false;
+        points++;
+        alert('Yes! I\'ve visited Canada, Mexico, England, France, Italy, and Austria. Your total score is: ' + points);
+        console.log('The user got question 6 correct');
+      }
+    }
+    // if the user has not gotten the right answer and the user is out of attempts
+    if (guesses === 6) {
+      alert('Nope! I\'ve visited Canada, Mexico, England, France, Italy, and Austria. You score is still: ' + points + '.');
+      tryAgain = false;
+      // if the user has not gotten the right answer and has additional attempts.
+    } else if (tryAgain) {
+      alert('WRONG! Try again...');
+      guesses++;
+      console.log('User to retry question 7');
+    }
+  } while (tryAgain && guesses <= 6); // while the user has attempts left
+
 }
