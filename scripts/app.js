@@ -51,36 +51,7 @@ askQuestion(4);
 yesNoLogic(4);
 
 // Question 6 - I'm thinking of a number... what is it?
-
-do {
-  askQuestion(5);
-
-  // if the answer gets it right
-  if (userAnswer === guessingGameInfo[5][1]) {
-    points++;
-    alert('Correct! Wow, you read my mind! Your total score is: ' + points);
-    tryAgain = false;
-    console.log('The user got question 5 correct');
-  } else if (guesses === 4) {
-    //else if the user is out of attempts
-    alert('Nope! The answer was ' + guessingGameInfo[5][1] + '. You score is still: ' + points + '.');
-    tryAgain = false;
-  } else if (userAnswer < guessingGameInfo[5][1]){
-    // else if the user has extra attempts and guessed too low
-    alert('Too low! Try again...');
-    guesses++;
-    tryAgain = true;
-    console.log('User to retry question 6. They guesses too low.');
-  } else {
-    // else if the user has extra attempts and guessed too high
-    alert('Too high! Try again...');
-    guesses++;
-    tryAgain = true;
-    console.log('User to retry question 6. They guesses too high.');
-  }
-} while (tryAgain && guesses <= 4); // keep running while tryAgain is true and they've had no more than 4 guesses.
-
-console.log('Total Score: ' + points);
+numberQuestion(5);
 
 //Question 7 - I've been to 6 countries other than the US. Can you guess the name of one of them?
 
@@ -121,6 +92,37 @@ function askQuestion(questionIndex) {
   console.log('Correct answer = ' + guessingGameInfo[questionIndex][1]);
 }
 
+function numberQuestion(questionIndex){
+  do {
+    askQuestion(5);
+    // if the answer gets it right
+    if (userAnswer === guessingGameInfo[questionIndex][1]) {
+      points++;
+      alert('Correct! Wow, you read my mind! Your total score is: ' + points);
+      tryAgain = false;
+      console.log('The user got question 5 correct');
+    } else if (guesses === 4) {
+      //else if the user is out of attempts
+      alert('Nope! The answer was ' + guessingGameInfo[questionIndex][1] + '. You score is still: ' + points + '.');
+      tryAgain = false;
+    } else if (userAnswer < guessingGameInfo[questionIndex][1]){
+      // else if the user has extra attempts and guessed too low
+      alert('Too low! Try again...');
+      guesses++;
+      tryAgain = true;
+      console.log('User to retry question 6. They guesses too low.');
+    } else {
+      // else if the user has extra attempts and guessed too high
+      alert('Too high! Try again...');
+      guesses++;
+      tryAgain = true;
+      console.log('User to retry question 6. They guesses too high.');
+    }
+  } while (tryAgain && guesses <= 4); // keep running while tryAgain is true and they've had no more than 4 guesses.
+
+  console.log('Total Score: ' + points);
+
+}
 function multipleAnswersQuestion(questionIndex) {
   do {
     askQuestion(6);
